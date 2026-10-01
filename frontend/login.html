@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NavettePro - Connexion</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-screen">
+            <div class="logo-container">
+                <img src="images/logo.png" alt="NavettePro Logo" class="logo-small">
+            </div>
+            <h2>Connexion</h2>
+            
+            <div class="role-selector">
+                <button class="role-btn active" data-role="STUDENT" onclick="selectRole('STUDENT')">Étudiant</button>
+                <button class="role-btn" data-role="DRIVER" onclick="selectRole('DRIVER')">Chauffeur</button>
+                <button class="role-btn" data-role="ADMIN" onclick="selectRole('ADMIN')">Administrateur</button>
+            </div>
+
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Mot de passe</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Se connecter</button>
+                <p style="text-align: center; margin-top: 15px;">
+                    Pas encore de compte ? <a href="#" onclick="toggleRegisterForm(); return false;" style="color: #007bff; text-decoration: none;">Créer un compte</a>
+                </p>
+            </form>
+
+            <div id="registerSection" class="register-section" style="display: none;">
+                <hr>
+                <h3>Créer un compte étudiant</h3>
+                <form id="registerForm" class="register-form">
+                    <div class="form-group">
+                        <label for="regFirstName">Prénom</label>
+                        <input type="text" id="regFirstName" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regLastName">Nom</label>
+                        <input type="text" id="regLastName" name="lastName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regEmail">Email universitaire</label>
+                        <input type="email" id="regEmail" name="email" placeholder="ex: y.soufary@mundiapolis.ma" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regPhone">Téléphone</label>
+                        <input type="tel" id="regPhone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="regPassword">Mot de passe</label>
+                        <input type="password" id="regPassword" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regRoute">Trajet</label>
+                        <select id="regRoute" name="routeId" required>
+                            <option value="">Sélectionner un trajet</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="regPickupPoint">Point de ramassage</label>
+                        <select id="regPickupPoint" name="pickupPointId" required disabled>
+                            <option value="">Sélectionner un point de ramassage</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-secondary btn-block">S'inscrire</button>
+                    <p style="text-align: center; margin-top: 15px;">
+                        Vous avez déjà un compte ? <a href="#" onclick="toggleRegisterForm(); return false;" style="color: #007bff; text-decoration: none;">Se connecter</a>
+                    </p>
+                </form>
+            </div>
+
+            <div id="errorMessage" class="error-message"></div>
+        </div>
+    </div>
+    <script src="js/auth.js"></script>
+</body>
+</html>

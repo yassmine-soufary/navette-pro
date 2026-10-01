@@ -1,0 +1,2 @@
+Placez le logo de NavettePro ici (logo.png)
+Le logo doit être au format PNG et avoir une taille raisonnable (recommandé: 200x200px ou similaire)

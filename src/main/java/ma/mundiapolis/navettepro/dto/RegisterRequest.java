@@ -1,0 +1,14 @@
+package ma.mundiapolis.navettepro.dto;
+
+import lombok.Data;
+
+@Data
+public class RegisterRequest {
+    private String email;
+    private String password;
+    private String firstName;
+    private String lastName;
+    private String phone;
+    private Long routeId;
+    private Long pickupPointId;
+}

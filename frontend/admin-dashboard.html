@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NavettePro - Administration</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>NavettePro - Administration</h1>
+            <button class="btn-icon" onclick="logout()">Déconnexion</button>
+        </header>
+
+        <div class="dashboard">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>📊 Statistiques</h3>
+                    <div id="statistics" class="statistics"></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>📡 Suivi des bus en temps réel</h3>
+                <div id="busesMap" class="map-container">
+                    <div id="map" class="map"></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>👨‍💼 Gestion des chauffeurs</h3>
+                <button class="btn btn-primary" onclick="showAddDriverForm()">Ajouter un chauffeur</button>
+                <div id="driversList" class="drivers-list"></div>
+            </div>
+
+            <div id="addDriverForm" class="card" style="display: none;">
+                <h3>Ajouter un nouveau chauffeur</h3>
+                <form id="driverForm" class="driver-form">
+                    <div class="form-group">
+                        <label for="driverEmail">Email</label>
+                        <input type="email" id="driverEmail" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="driverPassword">Mot de passe</label>
+                        <input type="password" id="driverPassword" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="driverFirstName">Prénom</label>
+                        <input type="text" id="driverFirstName" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="driverLastName">Nom</label>
+                        <input type="text" id="driverLastName" name="lastName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="driverPhone">Téléphone</label>
+                        <input type="tel" id="driverPhone" name="phone">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Créer</button>
+                    <button type="button" class="btn btn-secondary" onclick="hideAddDriverForm()">Annuler</button>
+                </form>
+            </div>
+
+            <div class="card">
+                <h3>📑 Réclamations</h3>
+                <div id="complaintsList" class="complaints-list"></div>
+            </div>
+
+            <div class="card">
+                <h3>📈 Rapports</h3>
+                <button class="btn btn-primary" onclick="generateReport()">Générer le rapport mensuel (PDF)</button>
+            </div>
+        </div>
+    </div>
+    <script src="js/admin.js"></script>
+</body>
+</html>

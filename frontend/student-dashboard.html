@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NavettePro - Étudiant</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>NavettePro</h1>
+            <button class="btn-icon" onclick="logout()">Déconnexion</button>
+        </header>
+
+        <div class="dashboard">
+            <div class="user-info">
+                <h2>Bienvenue, <span id="studentName"></span></h2>
+                <div class="route-info">
+                    <p><strong>Trajet:</strong> <span id="routeName"></span></p>
+                    <p><strong>Point de ramassage:</strong> <span id="pickupPointName"></span></p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>📍 Localisation du bus en temps réel</h3>
+                <div id="mapContainer" class="map-container">
+                    <div id="map" class="map"></div>
+                </div>
+                <div class="eta-info">
+                    <p><strong>Heure d'arrivée estimée:</strong> <span id="eta">Calcul en cours...</span></p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>🔔 Notifications</h3>
+                <div id="notificationsList" class="notifications-list"></div>
+                <div id="unreadCount" class="unread-badge"></div>
+            </div>
+
+            <div class="card">
+                <h3>📝 Réclamation</h3>
+                <form id="complaintForm" class="complaint-form">
+                    <div class="form-group">
+                        <label for="complaintType">Type de réclamation</label>
+                        <select id="complaintType" name="type" required>
+                            <option value="">Sélectionner</option>
+                            <option value="DELAY">Retard</option>
+                            <option value="OVERLOAD">Surcharge</option>
+                            <option value="BEHAVIOR">Comportement</option>
+                            <option value="OTHER">Autre</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="complaintDescription">Description</label>
+                        <textarea id="complaintDescription" name="description" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Envoyer la réclamation</button>
+                </form>
+            </div>
+
+            <div class="card">
+                <h3>📊 Historique des réclamations</h3>
+                <div id="complaintsHistory" class="complaints-history"></div>
+            </div>
+        </div>
+    </div>
+    <script src="js/student.js"></script>
+</body>
+</html>
